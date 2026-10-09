@@ -10,3 +10,6 @@ backend/uploads/
 backend/prisma/dev.db
 .vscode/
 .idea/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts

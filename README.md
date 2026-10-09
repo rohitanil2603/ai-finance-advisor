@@ -2,8 +2,8 @@
 
 Upload a bank statement, get a categorised spending dashboard, and ask an LLM for a plain-language
 read on your money — spending summary, flagged transactions, and saving tips.
-# LIVE LINK - https://ai-finance-advisor-kohl.vercel.app/dashboard
-# sample credentials - 
+## LIVE LINK - https://ai-finance-advisor-3.onrender.com/
+## sample credentials - 
    email - rohit@gmail.com
    password - 123456789
 

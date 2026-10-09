@@ -3,7 +3,7 @@ import axios, { AxiosError } from "axios";
 // Backend base URL. VITE_API_URL (set in .env locally, or in the Vercel project's env vars)
 // always wins; the fallback is the deployed Render backend, not localhost, so a Vercel build
 // that's missing the env var still points at a real API instead of silently breaking.
-const baseURL = import.meta.env.VITE_API_URL ?? "https://ai-finance-advisor-1-95xt.onrender.com/api";
+const baseURL = import.meta.env.VITE_API_URL ?? "https://ai-finance-advisor-2.onrender.com/api";
 
 export const apiClient = axios.create({
   baseURL,

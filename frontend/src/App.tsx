@@ -1,1 +1,5 @@
-// Top-level component: renders AppLayout + the route outlet.
+import { AppRoutes } from "@/router";
+
+export function App() {
+  return <AppRoutes />;
+}

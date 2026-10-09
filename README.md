@@ -7,8 +7,8 @@ this is a task for full stack internship
 Turns raw bank transaction CSVs into spending insights: upload a statement, see categorised
 spending on a dashboard, and get an AI-generated plain-language summary with saving tips.
 
-> Status: frontend and backend both fully implemented (see [PLAN.md](./PLAN.md) for the full
-> architecture). Needs a real `DATABASE_URL` and `OPENROUTER_API_KEY` to run end-to-end — see
+
+
 > Setup below. Without them the server still boots; auth/data calls return a clear error and
 > `/insights/generate` returns a clear 503 until a key is set.
 

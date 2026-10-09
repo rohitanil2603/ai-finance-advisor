@@ -11,7 +11,7 @@ const envSchema = z.object({
   JWT_EXPIRES_IN: z.string().default("7d"),
   COOKIE_NAME: z.string().default("fa_session"),
   OPENROUTER_API_KEY: z.string().optional(),
-  OPENROUTER_MODEL: z.string().default("anthropic/claude-3.5-haiku"),
+  OPENROUTER_MODEL: z.string().default("nvidia/nemotron-3-super-120b-a12b:free"),
   OPENROUTER_SITE_URL: z.string().default("http://localhost:5173"),
   OPENROUTER_APP_NAME: z.string().default("ai-finance-advisor"),
   MAX_UPLOAD_SIZE_MB: z.coerce.number().default(5),

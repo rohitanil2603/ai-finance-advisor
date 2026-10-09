@@ -1,8 +1,8 @@
 # API Reference
 
-Base URL: `http://localhost:4000/api` locally, or `<your-backend-host>/api` in production.
-All endpoints except `/auth/register` and `/auth/login` require the `fa_session` HTTP-only
-cookie set by those two calls (sent automatically by the browser with `credentials: "include"`).
+Base URL: `http://localhost:4000/api` locally, `<backend-host>/api` in production.
+Everything except `/auth/register` and `/auth/login` requires the `fa_session` cookie
+those two set — sent automatically by the browser, no manual header needed.
 
 ## Auth
 
@@ -35,9 +35,8 @@ Response (200):
 ```json
 { "imported": 62, "skipped": 0, "errors": [{ "row": 3, "message": "Invalid or missing date: \"n/a\"" }] }
 ```
-`skipped` counts rows that parsed fine but were exact duplicates of an existing transaction
-(same user, date, raw description, and amount). `errors` lists rows that failed validation and
-were not imported — the rest of the file still imports.
+`skipped` = exact duplicates of an existing row (same date, description, amount). `errors` lists
+rows that failed validation and weren't imported — the rest of the file still goes through.
 
 ### GET /transactions
 Query params (all optional): `from`, `to` (YYYY-MM-DD), `category` (one of the fixed category
@@ -85,9 +84,8 @@ Response (200):
 Response (200): the most recently generated insight, or `null` if none exists yet.
 
 ### POST /insights/generate
-Builds a compact summary of the user's last ~90 days of transactions (category totals, monthly
-totals, savings rate, top merchants, and the 10 largest debit transactions — not every raw row),
-sends it to the configured OpenRouter model, validates the structured response, and saves it.
+Aggregates the last ~90 days (category totals, monthly totals, savings rate, top merchants, 10
+largest debits), sends that to the configured OpenRouter model, validates the response, saves it.
 Response (200):
 ```json
 {

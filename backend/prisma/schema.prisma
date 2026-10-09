@@ -1,0 +1,63 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  transactions Transaction[]
+  insights     Insight[]
+  budgets      Budget[]
+}
+
+model Transaction {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date           DateTime
+  description    String
+  rawDescription String
+  amount         Float
+  balance        Float?
+  category       String
+  isRecurring    Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  @@unique([userId, date, rawDescription, amount])
+  @@index([userId, date])
+  @@index([userId, category])
+}
+
+model Insight {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  periodStart  DateTime
+  periodEnd    DateTime
+  summary      String
+  unusual      Json
+  observations Json
+  tips         Json
+  rawResponse  Json
+  createdAt    DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model Budget {
+  id           String @id @default(cuid())
+  userId       String
+  user         User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category     String
+  monthlyLimit Float
+
+  @@unique([userId, category])
+}

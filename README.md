@@ -66,7 +66,7 @@ a bad model reply just asks the user to retry instead of breaking the page.
 
 ## API
 
-Full endpoint list with sample requests/responses: [docs/API.md](./docs/API.md).
+Full endpoint list with sample requests/responses: [docs/API.md](https://github.com/rohitanil2603/ai-finance-advisor/blob/main/docs/API.md).
 
 ## Test credentials
 

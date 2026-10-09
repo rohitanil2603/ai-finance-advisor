@@ -77,4 +77,4 @@ Full endpoint list with sample requests/responses: [docs/API.md](./docs/API.md).
 
 | Dashboard | Transactions | AI Insights |
 |---|---|---|
-| ![Dashboard](./docs/screenshots/dashboard.png) | ![Transactions](./docs/screenshots/transaction.png) | ![AI Insights](./docs/screenshots/ai_insights.png) |
+| ![Dashboard](./docs/screenshots/dashboard.png) | ![Transactions](./docs/screenshots/transaction.png) | ![AI Insights](./docs/screenshots/ai_insights.png) | ![Upload CSV](./docs/screenshots/upload_csv.png) |

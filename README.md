@@ -70,7 +70,7 @@ Full endpoint list with sample requests/responses: [docs/API.md](./docs/API.md).
 
 ## Test credentials
 
-`demo@example.com` / `password123` after running `npm run seed` — 62 transactions from
+`rohit@gmail.com` / `123456789` after running `npm run seed` — 62 transactions from
 `sample-data/sample_transactions.csv`.
 
 ## Screenshots
